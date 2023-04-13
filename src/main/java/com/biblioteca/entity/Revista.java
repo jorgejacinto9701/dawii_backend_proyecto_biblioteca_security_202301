@@ -48,7 +48,12 @@ public class Revista {
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idModalidad")
-	private Modalidad mmodalidad;
+	@JoinColumn(name = "idTipoRevista")
+	private DataCatalogo tipoRevista;
+	
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idPais")
+	private Pais pais;
 
 }

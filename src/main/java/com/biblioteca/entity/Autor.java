@@ -42,7 +42,6 @@ public class Autor {
 	
 	private String telefono;
 	
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date fechaRegistro;
@@ -55,9 +54,11 @@ public class Autor {
 
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idGrado")
-	private Grado grado;
-	
+	@JoinColumn(name = "idPais")
+	private Pais pais;
 
-   
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idGrado")
+	private DataCatalogo grado;
 }

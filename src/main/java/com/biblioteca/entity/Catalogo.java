@@ -12,12 +12,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "categoria_libro")
-public class Categoria {
+@Table(name = "catalogo")
+public class Catalogo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCategoria;
+	private int idCatalogo;
 	private String descripcion;
 
 }

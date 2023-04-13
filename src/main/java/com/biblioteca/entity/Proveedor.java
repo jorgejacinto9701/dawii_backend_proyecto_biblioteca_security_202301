@@ -47,4 +47,10 @@ public class Proveedor {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idPais")
 	private Pais pais;
+	
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idTipoProveedor")
+	private DataCatalogo tipoProveedor;
+	
 }
